@@ -20,6 +20,7 @@
     </head>
 
     <body>
+<!-- Header Section -->
 
         <header class="jumbotron jumbotron-fluid">
             <div class="container">
@@ -39,6 +40,8 @@
                 </div>
             </div>
         </header>
+        <!-- END of Header Section-->
+        <!-- Modal for Reserve Campsite -->
         <div id="reserveModal" class="modal fade" role="dialog">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
@@ -101,6 +104,8 @@
                 </div>
             </div>
         </div>
+        <!-- End Of Reserve Campsite Modal -->
+        <!-- Navbar Section -->
         <nav class="navbar navbar-expand-sm navbar-dark sticky-top">
             <div class="container">
                 <a class="navbar-brand" href="#"><img src="img/logo.png" height="30" width="30" /></a>
@@ -128,6 +133,8 @@
                     </div>
             </div>
         </nav>
+        <!-- End of Navbar -->
+        <!-- Login Modal -->
         <div id="loginModal" class="modal fade" role="dialog">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -167,9 +174,12 @@
                 </div>
             </div>
         </div>
+ <!-- End of Login Modal -->
+ <!-- Start of Body wit Carousel and Info -->
         <div class="container">
             <div class="row row-content">
                 <div class="col-md-8 mx-auto">
+ <!-- Start of Carousel -->
                     <div id="homeCarousel" class="carousel slide" data-ride="carousel">
                         <ol class="carousel-indicators">
                             <li data-target="#homeCarousel" data-slide-to="0" class="active"></li>
@@ -213,9 +223,17 @@
                             <span class="carousel-control-next-icon"></span>
                             <span class="sr-only">Next</span>
                         </a>
+                        <div class="btn-group" id="carouselButton">
+                            <button class="btn btn-danger btn-sm" id="carouselPause">
+                                <i class="fa fa-pause"></i>
+                            </button>
+                            <button class="btn btn-danger btn-sm" id="carouselPlay">
+                                <i class="fa fa-play"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
-
+<!-- End of Carousel -->
                 <div class="row row-content align-items-center">
                     <div class="col-sm-4 order-sm-last col-md-3">
                         <h2 class="text-sm-right">Discover & Review</h2>
@@ -277,6 +295,9 @@
                 </div>
 
             </div>
+     <!-- End of INfo Section -->  
+     <!-- Start of Footer -->     
+
             <footer class="site-footer">
                 <div class="container">
                     <div class="row">
@@ -322,6 +343,15 @@
                 $(function () {
                     $('[data-toggle="tooltip"]').tooltip()
                 })
+                $(function() {
+                    $(".carousel").carousel( { interval: 2000, pause: "false" } );
+            $("#carouselPause").click(function(){
+                $(".carousel").carousel("pause");
+            });
+            $("#carouselPlay").click(function(){
+                $(".carousel").carousel("cycle");
+            });
+        });
             </script>
     </body>
 
